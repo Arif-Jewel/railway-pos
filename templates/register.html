@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - Railway Ticket Booking{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2 class="text-center mb-4">Register</h2>
+    
+    <form method="POST" class="w-50 mx-auto">
+        <!-- Username Field -->
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" class="form-control" required>
+        </div>
+        
+        <!-- Password Field -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        
+        <!-- Full Name Field -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Full Name:</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        
+        <!-- Email Field -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+        
+        <!-- Phone Number Field -->
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number:</label>
+            <input type="text" name="phone" class="form-control" required>
+        </div>
+        
+        <!-- Register Button -->
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+    </form>
+    
+    <p class="text-center mt-3">Already have an account? <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-sm">Login here</a></p>
+</div>
+{% endblock %}

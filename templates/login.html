@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - Railway Ticket Booking{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2 class="text-center mb-4">Login</h2>
+
+    {% if current_user.is_authenticated %}
+        <div class="alert alert-info text-center">
+            <p>You are already logged in. <a href="{{ url_for('profile') }}" class="alert-link">Go to your profile</a></p>
+        </div>
+    {% else %}
+        <form method="POST" class="w-50 mx-auto">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" name="username" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <p class="text-center mt-3">Don't have an account? <a href="{{ url_for('register') }}" class="btn btn-outline-primary btn-sm">Register here</a></p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+
+.alert.alert-message {
+    background-color: #fff3cd; /* Light yellow background */
+    border-color: #ffeeba; /* Slightly darker border */
+    color: #856404; /* Dark text for contrast */
+  }

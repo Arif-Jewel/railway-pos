@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment - Railway Ticket Booking{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2 class="text-center mb-4">Payment for <strong>{{ train.train_name }} Train</strong></h2>
+    <div class="text-center">
+        <p>You have selected <strong>{{ quantity }}</strong> ticket(s) in <strong>{{ train.train_name }}</strong>.</p>
+        <p><strong>Total Amount:</strong> £{{ '{:.2f}'.format(amount / 100) }}</p> <!-- Display amount with 2 decimal places -->
+    </div>
+
+    <form action="/payment" method="POST" class="text-center">
+        <script 
+            src="https://checkout.stripe.com/checkout.js" 
+            class="stripe-button"
+            data-key="{{ key }}"
+            data-amount="{{ amount }}"
+            data-name="Railway Ticket Booking"
+            data-description="Book {{ quantity }} seats in {{ train.train_name }}"
+            data-currency="GBP"
+            data-email="{{ current_user.email }}"
+            data-label="Please Pay £{{ '{:.2f}'.format(amount / 100) }}">
+        </script>
+    </form>
+</div>
+{% endblock %}

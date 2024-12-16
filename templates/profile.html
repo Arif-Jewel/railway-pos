@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile - Railway Ticket Booking{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">User Profile</h2>
+
+    {% if current_user.is_authenticated %}
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Profile Card -->
+                <div class="card shadow-sm">
+                    <div class="card-header text-center">
+                        <h4 class="card-title mb-0">Profile Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Profile Image -->
+                        <div class="text-center mb-4">
+                            <img src="https://via.placeholder.com/150" alt="User Avatar" class="rounded-circle img-fluid" style="width: 150px; height: 150px;">
+                        </div>
+
+                        <!-- User Details -->
+                        <div class="row">
+                            <div class="col-sm-4"><strong>Name:</strong></div>
+                            <div class="col-sm-8">{{ current_user.name }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"><strong>Email:</strong></div>
+                            <div class="col-sm-8">{{ current_user.email }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"><strong>Phone Number:</strong></div>
+                            <div class="col-sm-8">{{ current_user.phone }}</div>
+                        </div>
+
+                        <!-- Logout Button -->
+                        <div class="text-center mt-4">
+                            <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <!-- Not Authenticated Alert -->
+        <div class="alert alert-warning mt-4">
+            <p>You must be logged in to view your profile. <a href="{{ url_for('login') }}" class="alert-link">Login here</a></p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

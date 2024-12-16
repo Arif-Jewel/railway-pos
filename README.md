@@ -1,5 +1,5 @@
-#RAIL CONNECT
-# #Railway Point of Sale (PoS) System
+# RAIL CONNECT
+## Railway Point of Sale (PoS) System
 
 Welcome to the Railway PoS System repository! This project is designed to streamline ticketing and other point-of-sale operations for railway services. It offers an intuitive interface for users to manage bookings, payments, and customer data efficiently.
 
@@ -116,4 +116,4 @@ For questions or suggestions, please contact:
 
 ---
 
-Thank you for using ##RAIL  CONNECT!
+Thank you for using ## RAIL CONNECT!

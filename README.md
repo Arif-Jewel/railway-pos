@@ -116,4 +116,5 @@ For questions or suggestions, please contact:
 
 ---
 
-Thank you for using ## RAIL CONNECT!
+Thank you for using 
+## RAIL CONNECT!

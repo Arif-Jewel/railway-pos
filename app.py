@@ -96,6 +96,8 @@ def register():
         # Add the new user to the 'users' dictionary (this simulates storing user data)
         users[username] = new_user  # Add the new user object
 
+        login_user(new_user)
+
         flash("Registration successful! You are now logged in.", "success")
         
         # Redirect to the homepage after registration
@@ -142,7 +144,7 @@ def book_ticket(train_no):
     if request.method == 'POST':
         seats = int(request.form['seats'])
         if seats <= train['available_seats']:
-            # Now proceed with payment
+            train['available_seats'] -= seats
             amount = seats * train['price'] * 100 
             return render_template(
                 'payment.html',
@@ -186,6 +188,10 @@ def payment():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
 
 
 

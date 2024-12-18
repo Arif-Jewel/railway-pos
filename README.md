@@ -80,7 +80,7 @@ Welcome to the Railway PoS System repository! This project is designed to stream
 ```plaintext
 railway_PoS/
 ├── app.py                         # Main application file
-├── test_app.py                    # Unittest 
+├── test_app.py                    # Unittest application file
 ├── templates/                     # HTML templates
 │     ├── base.html                # Common base layout
 │     ├── booking.html             # Ticket booking page

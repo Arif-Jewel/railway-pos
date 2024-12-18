@@ -59,6 +59,12 @@ Welcome to the Railway PoS System repository! This project is designed to stream
    python app.py
    ```
 
+4. Run tests using:
+
+   ```bash
+   python -m unittest test_app.py
+   ```
+
 ---
 
 ## Usage
